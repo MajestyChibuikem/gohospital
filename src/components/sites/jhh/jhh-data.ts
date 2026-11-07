@@ -35,7 +35,7 @@ export const JHH_DATA: InstitutionPageData = {
     hoursBadge: "Emergency Room: Open 24/7 • Visiting Hours: 8:00 a.m. – 9:00 p.m. Daily",
     imageSrc: "/sites/jhh/hero-jhh.jpg",
     imageAlt:
-      "The Johns Hopkins Hospital campus at 1800 Orleans Street in East Baltimore featuring the Sheikh Zayed Tower, Bloomberg Children's Center, and historic Billings Dome",
+      "The Johns Hopkins Hospital historic Billings Administration Building and iconic dome at 601 N. Broadway in Baltimore, Maryland",
     actions: [
       {
         label: "Schedule an Appointment",
@@ -406,8 +406,8 @@ export const JHH_DATA: InstitutionPageData = {
         subtitle: "1800 Orleans Street, East Baltimore Campus",
         description:
           "The twin clinical towers along Orleans Street feature all-private, sound-buffered patient rooms, indoor healing gardens, curated museum-grade artwork, intraoperative MRI suites, and dedicated adult and pediatric emergency departments.",
-        imageSrc: "/sites/jhh/hero-jhh.jpg",
-        imageAlt: "The Sheikh Zayed Tower and Charlotte R. Bloomberg Children's Center at 1800 Orleans Street",
+        imageSrc: "/sites/jhh/campus-jhh.jpg",
+        imageAlt: "The Johns Hopkins Hospital East Baltimore entrance gates and historic medical pavilions",
         highlights: [
           { label: "Patient Rooms", value: "All-Private Healing Suites" },
           { label: "Operating Suites", value: "33 Advanced ORs + Intra-op MRI" },
@@ -429,8 +429,8 @@ export const JHH_DATA: InstitutionPageData = {
         subtitle: "Over 2,400 Full-Time Attending Physicians & Physician-Scientists",
         description:
           "Every clinical department at The Johns Hopkins Hospital is directly integrated with the research laboratories of the Johns Hopkins University School of Medicine, giving patients immediate access to pioneering clinical trials, genomic medicine, and multidisciplinary tumor and specialty boards.",
-        imageSrc: "/sites/gouni/dna-research-lab.jpg",
-        imageAlt: "Biomedical researchers and clinicians analyzing genomic and clinical trial data",
+        imageSrc: "/sites/jhh/hero-jhh.jpg",
+        imageAlt: "The historic dome and medical research campus of The Johns Hopkins Hospital",
         highlights: [
           { label: "Medical Faculty", value: "2,400+ Attending Physicians" },
           { label: "Heritage", value: "Founded 1889 (School of Medicine 1893)" },

@@ -37,7 +37,7 @@ export const GOUNI_DATA: InstitutionPageData = {
     hoursBadge: "Emergency Room (A&E): Open 24/7 • Visiting Hours: 8:00 a.m. – 9:00 p.m. Daily",
     imageSrc: "/sites/gouni/teaching-hospital.jpg",
     imageAlt:
-      "Attending physicians, surgeons, and clinical specialists consulting at Godfrey Okoye University Teaching Hospital (GOUNITH) in Enugu",
+      "Godfrey Okoye University Teaching Hospital (GOUNITH — Ntasi Obi) main entrance and outpatient complex in Trans-Ekulu, Enugu",
     actions: [
       {
         label: "Request an Appointment",
@@ -452,9 +452,9 @@ export const GOUNI_DATA: InstitutionPageData = {
         subtitle: "Trans-Ekulu / Thinkers Corner Medical Corridor, Enugu State",
         description:
           "Godfrey Okoye University Teaching Hospital (formerly Ntasi Obi Hospital) operates round-the-clock emergency, diagnostic, surgical, and maternal-child services. Powered by a dedicated 24-hour solar energy microgrid, our operating theatres, intensive care monitors, blood bank, and imaging suites run without interruption.",
-        imageSrc: "/sites/gouni/teaching-hospital.jpg",
+        imageSrc: "/sites/gouni/hero-campus.jpg",
         imageAlt:
-          "Consultant physicians and clinical team on ward rounds at Godfrey Okoye University Teaching Hospital in Enugu",
+          "Godfrey Okoye University Teaching Hospital (GOUNITH) courtyard and emergency ambulance fleet in Trans-Ekulu, Enugu",
         highlights: [
           { label: "Emergency & Lab", value: "24/7 A&E, Lab & Radiology" },
           { label: "Heart & GI Suites", value: "2D Echo & Endoscopy Unit" },
@@ -480,7 +480,7 @@ export const GOUNI_DATA: InstitutionPageData = {
           "As a university teaching hospital, GOUNITH is directly integrated with the Godfrey Okoye University College of Medicine and the Centre for DNA Forensics and Criminal Investigation (CeDFoCI)—bringing next-generation PCR testing, genomic sequencing, paternity verification, and clinician-scientist training directly to patient care.",
         imageSrc: "/sites/gouni/dna-research-lab.jpg",
         imageAlt:
-          "Molecular scientists performing PCR and DNA analysis inside the Godfrey Okoye University DNA Forensics Laboratory",
+          "Godfrey Okoye University Center for DNA Forensics and Criminal Investigation (CeDFoCI) facility and molecular laboratory team",
         highlights: [
           { label: "Medical Training", value: "MBBS & Nursing Clinical Hub" },
           { label: "Global Partner", value: "Cold Spring Harbor Lab NY" },
