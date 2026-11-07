@@ -1,0 +1,269 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Work Sans", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Merriweather", "Georgia", "Cambria", "Times New Roman", Times, serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-heading: var(--font-serif);
+  --color-hopkins-navy: var(--hopkins-navy);
+  --color-hopkins-navy-deep: var(--hopkins-navy-deep);
+  --color-hopkins-blue: var(--hopkins-blue);
+  --color-hopkins-sky: var(--hopkins-sky);
+  --color-hopkins-gold: var(--hopkins-gold);
+  --color-gouni-green: var(--gouni-green);
+  --color-surface-slate: var(--surface-slate);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+}
+
+:root {
+  /* Tier 1 & Tier 2: Johns Hopkins Medicine & Godfrey Okoye University Design Tokens */
+  --hopkins-navy: #002d72;
+  --hopkins-navy-deep: #001e4d;
+  --hopkins-blue: #005eb8;
+  --hopkins-sky: #e8f1fa;
+  --hopkins-gold: #f2a900;
+  --gouni-green: #1e6b45;
+  --surface-slate: #f4f7fa;
+  --surface-warm: #fffaf0;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.02 255);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 255);
+  --primary: #002d72;
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: #f4f7fa;
+  --secondary-foreground: #002d72;
+  --muted: #f4f7fa;
+  --muted-foreground: #4a5568;
+  --accent: #e8f1fa;
+  --accent-foreground: #002d72;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #d8e1e8;
+  --input: #cbd5e1;
+  --ring: #005eb8;
+  --radius: 0.375rem;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    max-inline-size: 100%;
+    overflow-x: clip;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    text-align: start;
+    overflow-wrap: break-word;
+    max-inline-size: 100%;
+    overflow-x: clip;
+  }
+
+  /* Deliberate heading balance and body pretty wrapping per modern-web-guidance typography */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    line-height: 1.2;
+  }
+
+  p,
+  blockquote,
+  dd {
+    text-wrap: pretty;
+    max-inline-size: 75ch;
+  }
+
+  /* Replaced media elements use block display to eliminate inline baseline gaps */
+  img,
+  svg,
+  video,
+  canvas {
+    display: block;
+  }
+
+  /* High-contrast focus ring with outline-offset per modern-web-guidance accessibility */
+  :where(a:any-link, button, summary, input, select, textarea):focus-visible {
+    outline: 3px solid var(--hopkins-gold);
+    outline-offset: 3px;
+  }
+
+  /* Minimum 24x24 CSS pixel interactive target size */
+  :where(a:any-link, button, summary, input, select) {
+    min-block-size: 1.5rem;
+    min-inline-size: 1.5rem;
+  }
+}
+
+/* Visually hidden utility that reveals on :focus-within / :active for skip links */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  inline-size: 1px !important;
+  block-size: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.skip-link:where(:focus-within, :active) {
+  position: fixed;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  z-index: 9999;
+  background-color: var(--hopkins-navy);
+  color: #ffffff;
+  padding-block: 0.625rem;
+  padding-inline: 1.25rem;
+  border-radius: 0.375rem;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0, 45, 114, 0.35);
+}
+
+/* Fluid Typography Scales (combining rem + vw inside clamp) */
+.jhh-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 1.35rem + 2.3vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.jhh-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.625rem, 1.2rem + 1.35vw, 2.375rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.jhh-stat-number {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 1.6rem + 2vw, 3.5rem);
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subgrid + Container Query Card System (modern-web-guidance css-layout & card) */
+.jhh-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
+  grid-auto-rows: auto auto 1fr auto;
+  gap: 1.5rem;
+}
+
+.jhh-guide-card {
+  grid-row: span 4;
+  display: grid;
+  /* Same-cascade fallback before subgrid */
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: subgrid;
+  container: guide-card / inline-size;
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  border-block-start: 4px solid var(--hopkins-navy);
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+  row-gap: 0.875rem;
+  box-shadow: 0 2px 8px rgba(0, 45, 114, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, translate 0.2s ease;
+}
+
+.jhh-guide-card:hover {
+  border-block-start-color: var(--hopkins-blue);
+  box-shadow: 0 12px 28px rgba(0, 45, 114, 0.12);
+}
+
+/* Exclude last-child border using :not(:last-child) rather than overriding */
+.jhh-bullet-list > li:not(:last-child) {
+  border-block-end: 1px solid #edf2f7;
+  padding-block-end: 0.5rem;
+  margin-block-end: 0.5rem;
+}
+
+/* Native <details> Exclusive Accordion Styling */
+.jhh-faq-item {
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jhh-faq-item[open] {
+  border-color: var(--hopkins-blue);
+  box-shadow: 0 6px 20px rgba(0, 45, 114, 0.08);
+}
+
+.jhh-faq-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: safe center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.125rem;
+  padding-inline: 1.375rem;
+  font-weight: 700;
+  color: var(--hopkins-navy);
+}
+
+.jhh-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.jhh-faq-item[open] .jhh-faq-chevron {
+  rotate: 180deg;
+}
+
+/* Native <dialog> Modal & Backdrop Styling */
+.jhh-dialog {
+  margin: auto;
+  inline-size: min(92dvw, 42rem);
+  max-block-size: 88dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--border);
+  border-block-start: 5px solid var(--hopkins-gold);
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: var(--foreground);
+  padding: 0;
+  box-shadow: 0 25px 60px rgba(0, 30, 77, 0.35);
+}
+
+.jhh-dialog::backdrop {
+  background-color: rgba(0, 22, 58, 0.68);
+  backdrop-filter: blur(3px);
+}
